@@ -1,0 +1,52 @@
+# PYTHON
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, r):
+        self.r = r
+
+    def area(self):
+        return 3.14 * self.r * self.r
+
+circle = Circle(5)
+print(circle.area())
+
+
+# Answer in 1: To define a common interface and force subclasses to implement the area() method.
+# Answer in 2: No — Shape is abstract and cannot be instantiated.
+
+
+// JAVA
+
+abstract class Shape {
+    abstract double area();
+}
+
+class Circle extends Shape {
+    double r;
+
+    Circle(double r) {
+        this.r = r;
+    }
+
+    double area() {
+        return 3.14 * r * r;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle c = new Circle(5);
+        System.out.println(c.area());
+    }
+}
+
+
+// Answer in 1: To prevent direct instantiation and require subclasses to provide specific behavior.
+// Answer in 2: No — abstract classes cannot be used to create objects directly.
